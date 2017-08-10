@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title of the document</title>
+        <link rel="stylesheet" href="..\node_modules\bootstrap\dist\css\bootstrap.css">
+
+    </head>
+
+    <body>
+        <div class="container">
+            <canvas id = "canvasDemo">
+
+            </canvas>
+        </div>
+        <div class="container">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>User ID</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" value="" placeholder="User ID" class=" form-control" id="txt_user_name" />
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>Password</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="password" value="" placeholder="Password" class=" form-control" id="txt_user_pwd" />
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <input type="button" value="save" class="btn btn-danger btn-sm " />
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>
+                                        Remember me
+                                        <input type="checkbox" id="chk_remember">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+                                 
+                function drawCircle(){
+
+                    var c = document.getElementById("canvasDemo");
+                    var ctx = c.getContext("2d");
+                    var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+                    grd.addColorStop(0,"red");
+                    grd.addColorStop(1,"white");
+                    
+                    //Fill with gradient
+                    ctx.fillStyle=grd;
+                    ctx.fillRect(10,10,150,100);
+
+                   
+                }
+                
+                window.onload=function()
+                {
+
+                    drawCircle()
+
+                document.getElementById("txt_user_name").value=window.localStorage.getItem("txt_user_name");
+			    document.getElementById("txt_user_pwd").value=window.localStorage.getItem("txt_user_pwd");
+			
+                var chk_remember = document.getElementById("chk_remember");
+                chk_remember.addEventListener("click",function(){
+                    var L_txt_userId =document.getElementById("txt_user_name").value;
+                    var L_txt_password =document.getElementById("txt_user_pwd").value;
+                   
+                    if(chk_remember.checked){
+ 
+                          window.localStorage.setItem("txt_user_name",L_txt_userId);
+                          window.localStorage.setItem("txt_user_pwd",L_txt_password);
+                      }else{
+ 
+ 
+                          window.localStorage.setItem("txt_user_name","");
+                          window.localStorage.setItem("txt_user_pwd","");
+                      }
+                })
+
+                }
+            
+                
+                
+            
+
+
+
+
+        </script>
+    </body>
+
+
+</html>
