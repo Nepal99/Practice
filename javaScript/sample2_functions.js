@@ -8,6 +8,13 @@ function multiplication(n)
 }
 
 //different ways of caling a function.
+/*
 multiplication(198);
 multiplication.call(null,81);
 multiplication.apply(null,[17]);
+*/
+
+
+var x = multiplication.length;  // it will give the number of parameters passed to the function.
+
+console.log(x);
