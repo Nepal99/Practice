@@ -1,7 +1,7 @@
 {
   "name": "practice",
   "version": "1.0.0",
-  "description": "Node JS Application",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,17 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/Nepal99/Practice.git"
   },
-  "keywords": [
-    "angular",
-    "react"
-  ],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Nepal99/Practice/issues"
   },
-  "homepage": "https://github.com/Nepal99/Practice#readme",
-  "dependencies": {
-    "express":"^4.15.3"
-  }
+  "homepage": "https://github.com/Nepal99/Practice#readme"
 }

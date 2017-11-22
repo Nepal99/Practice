@@ -38,6 +38,13 @@ console.log(incrementBy25());
 console.log(incrementBy25());
 
 /**
+ *  to avoid the memory leaks we have to nullify the objects.
+ *  incrementBy25 = null;
+ * 
+ *  
+ */
+
+/**
  * Need to be careful with the closures. 
  * If not used properly we will end with memory leaks.
  */
