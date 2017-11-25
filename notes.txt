@@ -1,0 +1,18 @@
+Print method in javascript
+We are going to create the rest api’s in the node.js
+
+Bootstraping angular application:
+
+First we have to install the bootstrap
+npm install bootstrap --save
+
+we have to import the bootstrap also in the server.js like the usage of the static html
+
+app.use('/modules', express.static('node_modules'));
+
+when we are using the boostrap and referencing we have to give the same name is we aliased it in the server.js file.
+
+eg: <link rel="stylesheet" type="text/css" href="../modules/bootstrap/dist/css/bootstrap.css">
+
+install the angular dependency to the project by using the npm library.
+eg: npm install angular --save

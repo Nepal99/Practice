@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/Nepal99/Practice#readme",
   "dependencies": {
-    "express":"^4.15.3"
+    "angular": "^1.6.7",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.3"
   }
 }

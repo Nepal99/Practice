@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../modules/bootstrap/dist/css/bootstrap.css">
+        <title>Title of the document.</title>
+    </head>
+    <body>
+        <button class="btn btn-primary">bootstrap</button>
+        <div class="container">
+            <!-- <p>Test this is the way of we doing the bootstrap container element and the we put it in a box model. Test this is the way of we doing the bootstrap container element and the we put it in a box model</p>    -->
+            <table border="1" id="test">
+
+
+            </table>
+        
+        </div>
+        <script>
+                var data =[{no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}, {no:"1001",name:"test"}];
+                var reportTbl= document.getElementById("test");
+                for(i=0;i<data.length;i++){
+                    var tr = document.createElement("tr");
+                    var td1 = document.createElement("td");
+                    td1.innerHTML = data[i].no;
+                    var td2 = document.createElement("td");
+                    td2.innerHTML = data[i].name;
+                    
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+
+                    reportTbl.appendChild(tr);
+					//This is how to load the json data into the table using the javaascript.
+                };
+        </script>
+
+    </body>
+</html>
