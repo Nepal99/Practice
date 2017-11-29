@@ -16,3 +16,86 @@ eg: <link rel="stylesheet" type="text/css" href="../modules/bootstrap/dist/css/b
 
 install the angular dependency to the project by using the npm library.
 eg: npm install angular --save
+
+it will update in the package.json file, you can see it.
+
+*******
+bootstraping angular js.
+1. open the index.html 
+2. put the angular reference in the script tag in the bottom of the page before closing the body tag.
+eg:   <script src="../modules/angular/angular.js"></script>
+
+3. create one more script tag and reference the config.js file. 
+
+in the config.js file, create the instantion of the angular application using the angular module.
+
+eg: var myapplication = angular.module('myApp', []);
+
+//here we initialize the angualar application.  var moduleName = angular.module("ng-app name", [dependencies]); 
+
+
+4. create a controller, which will talk to the model and the view.
+5. refer the controller in the index.html
+eg:<script src="controller/MenuCtrl.js"></script>
+
+6. create a HTML page for the view in the SPA architecture. refer it in ng-include.
+
+refer the angular controller as well.
+
+eg:  <div class="col-md-3" ng-include="'view/menu.html'" ng-controller="menuCtrl as menuModel">
+    
+ng-include is static. it will not change. whatever the data in the menu.html will be shown in the div component.
+
+7. show the data from the controller in the view page that is menu.html
+	eg:  <li ng-repeat="menu in menuModel.menuList"><a href="#{{menu.value}}">{{menu.label}}</a></li>
+         
+8. Now to display the dynamic content we need to do the routing. We install the angular-routing
+eg: npm install --save angular-route
+
+It will add the dependecy in the package.json file.
+
+add this file in the index.html 
+
+9. in the config.js where create the angular module inject the ngRoute. 
+
+eg: var myapplication = angular.module('myApp', ["ngRoute"]);
+
+Here we are adding the dependency injection to the file.
+
+10. use the $routeProvider service in the config method. this will help us to the build the SPA architecture. without having the ngRoute module we cannot use the $routeprovider.
+
+eg: myapplication.config(function($routeProvider){
+
+});
+
+
+configuring the $routeProvider: 
+
+we also need the $locationProvider so we add that dependency to the config()method.
+
+eg: myapplication.config(function($routeProvider,$locationProvider){
+
+--> To remove the !# in the URL we use the $locationProvider. 
+
+
+we create the view pages and cotrollers and we give them inside the $routeProvider to change the content dynamically depends on actions, in SPA architecture. 
+
+eg: 
+
+  $routeProvider
+    .when('/dashboard', {
+        templateUrl  : 'view/dashboard.html',
+        controller   : 'DashboardCtrl',
+        controllerAs : 'DashboardCtrl'
+    })
+    .when('/messages', {
+        templateUrl  : 'view/messages.html',
+        controller   : 'MessagesCtrl',
+        controllerAs : 'MessagesCtrl'
+    })
+    .otherwise({
+        redirectTO: '/dashboard'
+    })
+
+
+when will decide depends on URL whcih view to be loaded. This view content will be shown in the "ng-view" model. This is how we build the SPA.

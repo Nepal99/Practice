@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 
 
@@ -22,13 +20,13 @@ app.use('/modules', express.static('node_modules'));
 
 
 app.get('/hello', function(req, res){
-    console.log("Browser accessed this..!s");
+    console.log("Browser accessed this...");
 
     res.send('Hi!');
 });
 
 
 
-app.listen(3004, function(){
-    console.log('Example listening on the port number 3004!');
+app.listen(3000, function(){
+    console.log('Example listening on the port number 3000!');
 });

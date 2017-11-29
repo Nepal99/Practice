@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="myApp">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../modules/bootstrap/dist/css/bootstrap.css">
         <title>Title of the document.</title>
     </head>
     <body>
-        <button class="btn btn-primary">bootstrap</button>
+            <p></p>
         <div class="container">
-              <table border="1" id="test">
-                <tr ng-repeat="value in [1,3,5,6,7,8,9,4,67]">
-                    <td>{{value}}</td>
-                </tr>
-
-            </table> 
-        
+            <div class="row">
+                <div class="col-md-3" ng-include="'view/menu.html'" ng-controller="menuCtrl as menuModel">
+                    
+                </div>
+                <div class="col-md-9" ng-view>
+                    
+                </div>
+            </div>
         </div>
-        <script src="../modules/angular/angular.js"></script>
+       <script src="../modules/angular/angular.js"></script>
+       <script src="../modules/angular-route/angular-route.js"></script>
+       <script src="config.js"></script>
+       <script src="controller/MenuCtrl.js"></script>
+       <script src="controller/DashboardCtrl.js"></script>
+       <script src="controller/MessagesCtrl.js"></script>
+       <script src="controller/SettingsCtrl.js"></script>
+       <script src="controller/CommentsCtrl.js"></script>
     </body>
 </html>
